@@ -6,7 +6,7 @@
 /*   By: seyeo <responsible@kakao.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/26 23:55:02 by seyeo             #+#    #+#             */
-/*   Updated: 2022/03/18 13:12:24 by seyeo            ###   ########.fr       */
+/*   Updated: 2022/03/21 13:59:32 by seyeo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ void	ft_id_width(t_syntax *syntax, int sign)
 		{
 			if (sign < 0 || ft_strchr(syntax->prefix, ' ') || \
 					ft_strchr(syntax->prefix, '+'))
-				ft_left_padding(&syntax->argument, syntax->pad, syntax->width - 1);
+				ft_left_padding(&syntax->argument, syntax->pad, \
+									syntax->width - 1);
 			else
 				ft_left_padding(&syntax->argument, syntax->pad, syntax->width);
 			ft_prefix(syntax, sign);

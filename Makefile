@@ -6,7 +6,7 @@
 #    By: seyeo <responsible@kakao.com>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/27 15:10:15 by seyeo             #+#    #+#              #
-#    Updated: 2022/03/18 12:55:21 by seyeo            ###   ########.fr        #
+#    Updated: 2022/03/21 13:16:54 by seyeo            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,6 +37,7 @@ SRCS = $(SRCS_D)/ft_conversion_c.c \
 		$(SRCS_D)/ft_parse.c \
 		$(SRCS_D)/ft_prefix.c \
 		$(SRCS_D)/ft_printf.c \
+		$(SRCS_D)/ft_syntax.c
 		
 OBJS = $(SRCS:.c=.o)
 

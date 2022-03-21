@@ -6,7 +6,7 @@
 /*   By: seyeo <responsible@kakao.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 20:54:01 by seyeo             #+#    #+#             */
-/*   Updated: 2022/03/18 13:18:06 by seyeo            ###   ########.fr       */
+/*   Updated: 2022/03/21 13:16:34 by seyeo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,4 +64,5 @@ void		ft_conversion_s(t_format *fm, t_syntax *syntax);
 void		ft_conversion_digit(t_format *fm, t_syntax *syntax, char *base);
 char		*ft_make_num(t_syntax *syntax);
 void		ft_id_width(t_syntax *syntax, int sign);
+void		ft_syntax(t_format *fm);
 #endif
