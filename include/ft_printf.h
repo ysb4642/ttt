@@ -6,7 +6,7 @@
 /*   By: seyeo <responsible@kakao.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 20:54:01 by seyeo             #+#    #+#             */
-/*   Updated: 2022/03/21 13:16:34 by seyeo            ###   ########.fr       */
+/*   Updated: 2022/04/13 21:46:55 by seyeo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,8 @@ int			ft_printf(const char *format, ...);
 t_format	*ft_init_format(const char *format, va_list ap);
 t_syntax	*ft_init_syntax(void);
 void		ft_syntax(t_format *fm);
-void		*ft_parse(t_format *fm, t_syntax *syntax);
-void		ft_convert_parse(t_format *fm, t_syntax *syntax);
+void		*ft_parsing(t_format *fm, t_syntax *syntax);
+void		ft_convert_parsing(t_format *fm, t_syntax *syntax);
 void		ft_precision(t_format *fm, t_syntax *syntax);
 void		ft_width(t_format *fm, t_syntax *syntax);
 void		ft_flags(t_format *fm, t_syntax *syntax);

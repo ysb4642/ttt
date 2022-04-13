@@ -6,7 +6,7 @@
 #    By: seyeo <responsible@kakao.com>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/27 15:10:15 by seyeo             #+#    #+#              #
-#    Updated: 2022/03/21 13:16:54 by seyeo            ###   ########.fr        #
+#    Updated: 2022/04/13 21:50:20 by seyeo            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,10 +31,10 @@ SRCS = $(SRCS_D)/ft_conversion_c.c \
 		$(SRCS_D)/ft_conversion_p.c \
 		$(SRCS_D)/ft_conversion_percent.c \
 		$(SRCS_D)/ft_conversion_s.c \
-		$(SRCS_D)/ft_convert.c \
+		$(SRCS_D)/ft_convertion.c \
 		$(SRCS_D)/ft_init.c \
 		$(SRCS_D)/ft_pad.c \
-		$(SRCS_D)/ft_parse.c \
+		$(SRCS_D)/ft_parsing.c \
 		$(SRCS_D)/ft_prefix.c \
 		$(SRCS_D)/ft_printf.c \
 		$(SRCS_D)/ft_syntax.c

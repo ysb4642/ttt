@@ -6,7 +6,7 @@
 /*   By: seyeo <responsible@kakao.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 13:15:45 by seyeo             #+#    #+#             */
-/*   Updated: 2022/03/21 13:58:20 by seyeo            ###   ########.fr       */
+/*   Updated: 2022/04/13 21:46:17 by seyeo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_syntax(t_format *fm)
 
 	fm->i++;
 	syntax = ft_init_syntax();
-	ft_parse(fm, syntax);
+	ft_parsing(fm, syntax);
 	if (syntax->conversion)
 	{
 		ft_convert_type(fm, syntax);
