@@ -1,39 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_type_percent.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seyeo <responsible@kakao.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/23 20:24:30 by seyeo             #+#    #+#             */
-/*   Updated: 2022/04/25 21:31:54 by seyeo            ###   ########.fr       */
+/*   Created: 2022/03/16 12:50:06 by seyeo             #+#    #+#             */
+/*   Updated: 2022/04/25 21:31:50 by seyeo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_printf(const char *format, ...)
+void	ft_type_percent(t_syntax *syntax)
 {
-	va_list		ap;
-	t_format	*fm;
-	int			len;
-
-	if (format == NULL)
-		return (0);
-	va_start(ap, format);
-	fm = ft_init_format(format, ap);
-	if (!fm)
-		return (0);
-	while (fm->format[fm->i])
-	{
-		if (fm->format[fm->i] == '%')
-			ft_syntax(fm);
-		else
-			fm->len += write(1, &fm->format[fm->i++], 1);
-	}
-	len = fm->len;
-	free(fm);
-	fm = NULL;
-	va_end(ap);
-	return (len);
+	syntax->argument = ft_addchr("", syntax->type);
+	if (!syntax->leftjustify)
+		ft_left_padding(&syntax->argument, syntax->pad, syntax->width);
+	else
+		ft_right_padding(&syntax->argument, ' ', syntax->width);
+	syntax->len = ft_strlen(syntax->argument);
 }

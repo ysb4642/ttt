@@ -6,7 +6,7 @@
 /*   By: seyeo <responsible@kakao.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 20:54:01 by seyeo             #+#    #+#             */
-/*   Updated: 2022/04/13 21:46:55 by seyeo            ###   ########.fr       */
+/*   Updated: 2022/04/25 20:44:37 by seyeo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ typedef struct s_syntax
 	char	*prefix;
 	char	*argument;
 	char	pad;
-	char	conversion;
+	char	type;
 	size_t	len;
 }	t_syntax;
 
@@ -56,12 +56,12 @@ void		ft_left_padding(char **str, char pad, int width);
 void		ft_right_padding(char **str, char pad, int width);
 void		ft_prefix_h(t_syntax *syntax);
 void		ft_prefix(t_syntax *syntax, int sign);
-void		ft_conversion_c(t_format *fm, t_syntax *syntax);
-void		ft_conversion_id(t_format *fm, t_syntax *syntax);
-void		ft_conversion_p(t_format *fm, t_syntax *syntax);
-void		ft_conversion_percent(t_syntax *syntax);
-void		ft_conversion_s(t_format *fm, t_syntax *syntax);
-void		ft_conversion_digit(t_format *fm, t_syntax *syntax, char *base);
+void		ft_type_c(t_format *fm, t_syntax *syntax);
+void		ft_type_id(t_format *fm, t_syntax *syntax);
+void		ft_type_p(t_format *fm, t_syntax *syntax);
+void		ft_type_percent(t_syntax *syntax);
+void		ft_type_s(t_format *fm, t_syntax *syntax);
+void		ft_type_digit(t_format *fm, t_syntax *syntax, char *base);
 char		*ft_make_num(t_syntax *syntax);
 void		ft_id_width(t_syntax *syntax, int sign);
 void		ft_syntax(t_format *fm);

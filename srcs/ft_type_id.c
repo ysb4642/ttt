@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_conversion_id.c                                 :+:      :+:    :+:   */
+/*   ft_type_id.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seyeo <responsible@kakao.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/26 23:55:02 by seyeo             #+#    #+#             */
-/*   Updated: 2022/03/21 13:59:32 by seyeo            ###   ########.fr       */
+/*   Updated: 2022/04/25 21:31:51 by seyeo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	ft_id_width(t_syntax *syntax, int sign)
 	}
 }
 
-void	ft_conversion_id(t_format *fm, t_syntax *syntax)
+void	ft_type_id(t_format *fm, t_syntax *syntax)
 {
 	long	tmp;
 	int		sign;

@@ -1,20 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_conversion_percent.c                            :+:      :+:    :+:   */
+/*   ft_type_digit.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seyeo <responsible@kakao.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/16 12:50:06 by seyeo             #+#    #+#             */
-/*   Updated: 2022/03/18 13:13:10 by seyeo            ###   ########.fr       */
+/*   Created: 2022/02/27 00:59:17 by seyeo             #+#    #+#             */
+/*   Updated: 2022/04/25 21:31:52 by seyeo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_conversion_percent(t_syntax *syntax)
+void	ft_type_digit(t_format *fm, t_syntax *syntax, char *base)
 {
-	syntax->argument = ft_addchr("", syntax->conversion);
+	unsigned int	num;
+
+	num = (unsigned int)(va_arg(fm->ap, unsigned int));
+	syntax->argument = ft_printf_itoa((unsigned long)num, base);
+	if (syntax->precision > -1)
+	{
+		if (!syntax->precision && num == 0)
+		{
+			free(syntax->argument);
+			syntax->argument = ft_strdup("");
+		}
+		ft_left_padding(&syntax->argument, '0', syntax->precision);
+		syntax->pad = ' ';
+	}
+	if (num)
+		ft_prefix(syntax, 0);
 	if (!syntax->leftjustify)
 		ft_left_padding(&syntax->argument, syntax->pad, syntax->width);
 	else

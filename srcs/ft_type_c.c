@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_conversion_c.c                                  :+:      :+:    :+:   */
+/*   ft_type_c.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seyeo <responsible@kakao.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/26 23:36:20 by seyeo             #+#    #+#             */
-/*   Updated: 2022/03/18 13:10:35 by seyeo            ###   ########.fr       */
+/*   Updated: 2022/04/25 20:42:26 by seyeo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_conversion_c(t_format *fm, t_syntax *syntax)
+void	ft_type_c(t_format *fm, t_syntax *syntax)
 {
 	char	c;
 

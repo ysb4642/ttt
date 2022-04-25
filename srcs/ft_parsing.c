@@ -6,7 +6,7 @@
 /*   By: seyeo <responsible@kakao.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/26 19:45:59 by seyeo             #+#    #+#             */
-/*   Updated: 2022/04/13 21:46:46 by seyeo            ###   ########.fr       */
+/*   Updated: 2022/04/25 21:31:55 by seyeo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_flags(t_format *fm, t_syntax *syntax)
 
 	if (!syntax->prefix)
 		syntax->prefix = ft_strdup("");
-	while (ft_strchr("-+ 0#", fm->format[fm->i]))
+	while (ft_strchr("-# +0", fm->format[fm->i]))
 	{
 		if (fm->format[fm->i] == '-')
 			syntax->leftjustify = 1;
@@ -73,7 +73,7 @@ void	ft_convert_parsing(t_format *fm, t_syntax *syntax)
 	if (!ft_strchr(FLAGS, fm->format[fm->i]) \
 		&& ft_isprint(fm->format[fm->i]))
 	{
-		syntax->conversion = fm->format[fm->i];
+		syntax->type = fm->format[fm->i];
 		fm->i++;
 	}
 }
@@ -84,7 +84,7 @@ void	*ft_parsing(t_format *fm, t_syntax *syntax)
 	ft_width(fm, syntax);
 	ft_precision(fm, syntax);
 	ft_convert_parsing(fm, syntax);
-	if (!syntax->conversion && (ft_strchr(FLAGS, fm->format[fm->i])))
+	if (!syntax->type && (ft_strchr(FLAGS, fm->format[fm->i])))
 		ft_parsing(fm, syntax);
 	return (syntax);
 }

@@ -6,7 +6,7 @@
 /*   By: seyeo <responsible@kakao.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/26 15:16:36 by seyeo             #+#    #+#             */
-/*   Updated: 2022/03/18 13:17:22 by seyeo            ###   ########.fr       */
+/*   Updated: 2022/04/25 20:42:23 by seyeo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ t_syntax	*ft_init_syntax(void)
 	if (!syntax)
 		return (NULL);
 	syntax->argument = NULL;
-	syntax->conversion = '\0';
+	syntax->type = '\0';
 	syntax->leftjustify = 0;
 	syntax->len = 0;
 	syntax->pad = ' ';

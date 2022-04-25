@@ -6,7 +6,7 @@
 #    By: seyeo <responsible@kakao.com>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/27 15:10:15 by seyeo             #+#    #+#              #
-#    Updated: 2022/04/13 21:50:20 by seyeo            ###   ########.fr        #
+#    Updated: 2022/04/25 20:42:30 by seyeo            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,13 +25,13 @@ AR	= ar -rcs
 SRCS_D = ./srcs
 RM = rm -f
 
-SRCS = $(SRCS_D)/ft_conversion_c.c \
-		$(SRCS_D)/ft_conversion_digit.c \
-		$(SRCS_D)/ft_conversion_id.c \
-		$(SRCS_D)/ft_conversion_p.c \
-		$(SRCS_D)/ft_conversion_percent.c \
-		$(SRCS_D)/ft_conversion_s.c \
-		$(SRCS_D)/ft_convertion.c \
+SRCS = $(SRCS_D)/ft_type_c.c \
+		$(SRCS_D)/ft_type_digit.c \
+		$(SRCS_D)/ft_type_id.c \
+		$(SRCS_D)/ft_type_p.c \
+		$(SRCS_D)/ft_type_percent.c \
+		$(SRCS_D)/ft_type_s.c \
+		$(SRCS_D)/ft_type.c \
 		$(SRCS_D)/ft_init.c \
 		$(SRCS_D)/ft_pad.c \
 		$(SRCS_D)/ft_parsing.c \

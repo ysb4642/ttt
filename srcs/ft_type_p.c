@@ -1,37 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_conversion_digit.c                              :+:      :+:    :+:   */
+/*   ft_type_p.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seyeo <responsible@kakao.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/27 00:59:17 by seyeo             #+#    #+#             */
-/*   Updated: 2022/03/18 13:10:58 by seyeo            ###   ########.fr       */
+/*   Created: 2022/02/27 00:27:23 by seyeo             #+#    #+#             */
+/*   Updated: 2022/04/25 21:31:50 by seyeo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_conversion_digit(t_format *fm, t_syntax *syntax, char *base)
+char	*ft_make_num(t_syntax *syntax)
 {
-	unsigned int	num;
+	char	*res;
 
-	num = (unsigned int)(va_arg(fm->ap, unsigned int));
-	syntax->argument = ft_printf_itoa((unsigned long)num, base);
 	if (syntax->precision > -1)
 	{
-		if (!syntax->precision && num == 0)
-		{
-			free(syntax->argument);
-			syntax->argument = ft_strdup("");
-		}
-		ft_left_padding(&syntax->argument, '0', syntax->precision);
-		syntax->pad = ' ';
+		res = (char *)malloc(sizeof(char) * (syntax->precision + 1));
+		if (!res)
+			return (NULL);
+		ft_memset(res, '0', (size_t)syntax->precision);
+		res[syntax->precision] = '\0';
 	}
-	if (num)
-		ft_prefix(syntax, 0);
+	else
+		res = ft_strdup("0");
+	return (res);
+}
+
+void	ft_type_p(t_format *fm, t_syntax *syntax)
+{
+	void	*p;
+	char	*ad;
+
+	ad = NULL;
+	p = va_arg(fm->ap, void *);
+	if (!p)
+		ad = ft_make_num(syntax);
+	else
+		ad = ft_printf_itoa((unsigned long)p, HEX_L);
+	syntax->argument = ft_strjoin("0x", ad);
+	free(ad);
+	ad = NULL;
 	if (!syntax->leftjustify)
-		ft_left_padding(&syntax->argument, syntax->pad, syntax->width);
+		ft_left_padding(&syntax->argument, ' ', syntax->width);
 	else
 		ft_right_padding(&syntax->argument, ' ', syntax->width);
 	syntax->len = ft_strlen(syntax->argument);
